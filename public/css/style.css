@@ -1,0 +1,32 @@
+.navbar {
+    border-bottom: 1px solid gainsboro;
+}
+
+.navbar-brand h4 {
+    color: #ff2c2c;
+}
+
+.navbar ul li {
+    margin-left: 1rem;
+}
+
+.navbar ul li a:hover {
+    color: #ff2c2c !important;
+}
+
+
+.filters {
+    padding: 2rem 0;
+    justify-content: center;
+}
+
+.filters button {
+    font-size: 0.9rem;
+}
+
+.allListings {
+    border: 1px solid black;
+    height: 50rem;
+    margin: 1rem 3rem;
+    border-radius: 1rem;
+}
