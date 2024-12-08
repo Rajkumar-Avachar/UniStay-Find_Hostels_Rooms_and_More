@@ -4,7 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
-const flash = require("connect-flash");
+// const flash = require("connect-flash");
 const MongoStore = require('connect-mongo');
 const Listing = require("./models/listing.js");
 
@@ -21,9 +21,9 @@ app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.get("/", async (req,res) => {
+app.get("/", async (req, res) => {
     let listings = await Listing.find();
-    res.render("listings/index.ejs", {title: "UniStay | Explore Hostels and Rooms", listings});
+    res.render("listings/index.ejs", { title: "UniStay | Explore Hostels and Rooms", listings });
 });
 
 
