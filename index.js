@@ -6,7 +6,8 @@ const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const flash = require("connect-flash");
 const MongoStore = require('connect-mongo');
-const Listing = require("./models/listing.js");
+
+const listingRoutes = require("./routes/listingRoutes.js");
 
 if (process.env.NODE_ENV != "production") {
     require('dotenv').config();
@@ -21,11 +22,6 @@ app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.get("/", async (req, res) => {
-    let listings = await Listing.find();
-    res.render("listings/index.ejs", { title: "UniStay | Explore Hostels and Rooms", listings });
-});
-
 
 async function main() {
     const mongoURI = process.env.MONGO_URI;
@@ -38,6 +34,10 @@ async function main() {
     }
 }
 main();
+
+
+
+app.use("/", listingRoutes);
 
 
 
