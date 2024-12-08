@@ -1,1 +1,1 @@
-# UniStay: Find Hostels & Rooms Near You
+# UniStay: Find Hostels, Rooms & More
