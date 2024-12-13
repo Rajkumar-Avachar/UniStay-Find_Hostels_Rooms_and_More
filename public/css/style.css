@@ -1,3 +1,5 @@
+/* Navbar */
+
 .navbar {
     border-bottom: 1px solid gainsboro;
 }
@@ -15,7 +17,11 @@
 }
 
 
+/* Homepage */
+
 .filters {
+    display: flex;
+    gap: 1rem;
     padding: 2rem 0;
     justify-content: center;
 }
@@ -29,4 +35,27 @@
     height: 50rem;
     margin: 1rem 3rem;
     border-radius: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Error.ejs */
+
+.alert-danger {
+    width: 50%;
+    margin: 3rem auto 13rem;
+    height: 10vh;
+    padding: 2rem 3rem;
 }

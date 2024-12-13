@@ -6,6 +6,7 @@ const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const flash = require("connect-flash");
 const MongoStore = require('connect-mongo');
+const ExpressError = require("./utils/ExpressError.js");
 
 const listingRoutes = require("./routes/listingRoutes.js");
 
@@ -38,6 +39,15 @@ main();
 
 
 app.use("/", listingRoutes);
+
+app.all("/*", (req, res, next) => {
+    next(new ExpressError(404, "Page Not Found"));
+});
+
+app.use((err, req, res, next) => {
+    let { statusCode = 500, message = "Something went wrong!" } = err;
+    res.status(statusCode).render("layout/error.ejs", { message, title: "Error" });
+});
 
 
 
